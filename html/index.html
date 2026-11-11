@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мир в рюкзаке | Главная</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">🎒 Мир в рюкзаке</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="about.html">О блоге</a></li>
+                <li><a href="articles.html">Статьи</a></li>
+                <li><a href="gallery.html">Галерея</a></li>
+                <li><a href="contacts.html">Контакты</a></li>
+                <li><a href="game.html">Игра</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Добро пожаловать в «Мир в рюкзаке»!</h1>
+        
+        <p>Привет! Меня зовут ..., и я обожаю ездить туда, куда не летают туристические чартеры. Здесь я делюсь своими историями, лайфхаками для бюджетных путешествий и фотографиями невероятных мест.</p>
+        
+        <!-- Слайдер -->
+        <div class="slider-container">
+            <div class="slider-wrapper" id="slider">
+                <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1000" alt="Дорога в горах">
+                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000" alt="Море">
+                <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1000" alt="Озеро">
+            </div>
+            <button class="slider-btn prev-btn" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="slider-btn next-btn" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+
+        <h2 style="margin-top: 50px;">Последние новости</h2>
+        <p>Совсем недавно я вернулся из поездки по Кавказу. Скоро выйдет большая статья о том, как проехать 500 км автостопом с одним рюкзаком.</p>
+    </main>
+
+
+    <!-- Скрипт для слайдера -->
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slider-wrapper img');
+        const totalSlides = slides.length;
+
+        function moveSlide(direction) {
+            currentSlide += direction;
+            if (currentSlide < 0) currentSlide = totalSlides - 1;
+            if (currentSlide >= totalSlides) currentSlide = 0;
+            
+            const slider = document.getElementById('slider');
+            slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+
+        // Автопрокрутка каждые 4 секунды
+        setInterval(() => moveSlide(1), 4000);
+    </script>
+</body>
+</html>

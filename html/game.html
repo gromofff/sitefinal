@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Фавиконка, чтобы убрать ошибку 404 в консоли браузера -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎒</text></svg>">
+    <title>Мир в рюкзаке | Игра</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">🎒 Мир в рюкзаке</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="about.html">О блоге</a></li>
+                <li><a href="articles.html">Статьи</a></li>
+                <li><a href="gallery.html">Галерея</a></li>
+                <li><a href="game.html">Игра</a></li> <!-- Новая ссылка -->
+                <li><a href="contacts.html">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Игра: Собери рюкзак</h1>
+        <p>Помоги собрать как можно больше припасов в дорогу! Управляй рюкзаком с помощью стрелок на клавиатуре (или клавиш W, A, S, D).</p>
+        
+        <!-- Игровой блок -->
+        <div class="game-section">
+            <div class="game-header">
+                <div class="game-score">Собрано: <span id="score">0</span></div>
+            </div>
+            <canvas id="gameCanvas" width="400" height="400"></canvas>
+            <br>
+            <button class="game-btn" id="restartBtn">Начать заново</button>
+            <p class="game-instructions">Управление: Стрелки или WASD. Собирай 🎒, избегай стен и хвоста.</p>
+        </div>
+    </main>
+
+    <!-- Подключение скрипта игры -->
+    <script src="../js/game.js"></script>
+</body>
+</html>
