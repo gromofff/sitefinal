@@ -22,7 +22,7 @@ function initGame() {
     generateFood();
     
     if (gameInterval) clearInterval(gameInterval);
-    gameInterval = setInterval(drawGame, 120); // Скорость игры
+    gameInterval = setInterval(drawGame, 100); // Скорость игры
 }
 
 // Генерация еды (рюкзака) в случайном месте
